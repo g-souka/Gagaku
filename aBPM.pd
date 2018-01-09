@@ -1,0 +1,28 @@
+#N canvas 827 421 450 300 10;
+#X obj 26 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X floatatom 44 23 5 1 500 0 - - -, f 5;
+#X floatatom 58 104 7 0 0 0 - - -, f 7;
+#X obj 26 124 metro;
+#X obj 26 146 outlet;
+#X obj 84 146 outlet;
+#X obj 184 20 loadbang;
+#X obj 138 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 84 23 7 0 0 0 - - -, f 7;
+#X obj 58 82 expr 60000 / $f1;
+#X obj 136 146 s masterTempo;
+#X msg 184 42 9;
+#X connect 0 0 3 0;
+#X connect 0 0 7 0;
+#X connect 1 0 9 0;
+#X connect 2 0 3 1;
+#X connect 2 0 5 0;
+#X connect 2 0 8 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 6 0 11 0;
+#X connect 7 0 1 0;
+#X connect 9 0 2 0;
+#X connect 11 0 1 0;
+#X coords 0 0 1 1 133 19 2 23 21;

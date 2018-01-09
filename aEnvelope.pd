@@ -1,0 +1,95 @@
+#N canvas 437 107 791 532 10;
+#X msg 84 394 \$1 \$2 \, \$3 \$4 \$2 \, 0 \$5 \$6;
+#X obj 84 416 vline~;
+#X obj 84 370 pack 0 0 0 0 0 0;
+#X floatatom 85 190 5 0 0 0 attack_vol - -, f 5;
+#X floatatom 105 210 5 0 0 0 attack_decay - -, f 5;
+#X floatatom 127 230 5 0 0 0 middle_vol - -, f 5;
+#X floatatom 149 256 5 0 0 0 middle_decay - -, f 5;
+#X floatatom 171 282 5 0 0 0 final_decay - -, f 5;
+#X obj 193 343 +;
+#X obj 193 309 t b f;
+#X obj 135 112 t b b b b b;
+#X obj 84 438 outlet~;
+#X obj 292 175 hsl 128 15 0 1 0 0 empty empty attack_vol 4 8 0 10 -168087
+-1 -262144 0 1;
+#X obj 292 194 hsl 128 15 0 0.1 0 0 empty empty attack_decay 4 8 0
+10 -168087 -1 -262144 0 1;
+#X floatatom 425 176 7 0 0 0 - - -, f 7;
+#X floatatom 425 195 7 0 0 0 - - -, f 7;
+#X obj 292 213 hsl 128 15 0 0.5 0 0 empty empty middle_vol 4 8 0 10
+-168087 -1 -262144 0 1;
+#X floatatom 425 214 7 0 0 0 - - -, f 7;
+#X obj 292 232 hsl 128 15 0 0.3 0 0 empty empty middle_decay 4 8 0
+10 -168087 -1 -262144 0 1;
+#X floatatom 425 233 7 0 0 0 - - -, f 7;
+#X obj 292 252 hsl 128 15 0 0.6 0 0 empty empty final_decay 4 8 0 10
+-168087 -1 -262144 0 1;
+#X floatatom 425 253 7 0 0 0 - - -, f 7;
+#X obj 289 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 103 41 5 0 0 0 - - -, f 5;
+#X obj 103 60 sel 0;
+#X obj 135 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 103 18 inlet;
+#X text 375 33 decay total é a subdivisão da nota;
+#X text 369 56 cada componente dos decays tem que ser uma subdivisão
+do tempo total. sendo o total o tempo max \, cada uma das partes tem
+que representar uma fracção.;
+#X floatatom 253 40 5 0 0 0 - - -, f 5;
+#X obj 253 109 *;
+#X obj 283 109 *;
+#X obj 313 109 *;
+#X obj 253 59 t b f;
+#X obj 253 18 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 11 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;
+#X connect 4 0 8 0;
+#X connect 5 0 2 2;
+#X connect 6 0 2 3;
+#X connect 6 0 9 0;
+#X connect 7 0 2 4;
+#X connect 8 0 2 5;
+#X connect 9 0 8 0;
+#X connect 9 1 8 1;
+#X connect 10 0 3 0;
+#X connect 10 0 12 0;
+#X connect 10 1 4 0;
+#X connect 10 1 13 0;
+#X connect 10 2 5 0;
+#X connect 10 2 16 0;
+#X connect 10 3 6 0;
+#X connect 10 3 18 0;
+#X connect 10 4 7 0;
+#X connect 10 4 20 0;
+#X connect 12 0 14 0;
+#X connect 12 0 3 0;
+#X connect 13 0 30 0;
+#X connect 15 0 4 0;
+#X connect 16 0 17 0;
+#X connect 16 0 5 0;
+#X connect 18 0 31 0;
+#X connect 19 0 6 0;
+#X connect 20 0 32 0;
+#X connect 21 0 7 0;
+#X connect 23 0 24 0;
+#X connect 24 1 25 0;
+#X connect 25 0 10 0;
+#X connect 25 0 22 0;
+#X connect 26 0 23 0;
+#X connect 29 0 33 0;
+#X connect 30 0 15 0;
+#X connect 31 0 19 0;
+#X connect 32 0 21 0;
+#X connect 33 0 30 0;
+#X connect 33 0 31 0;
+#X connect 33 0 32 0;
+#X connect 33 1 32 1;
+#X connect 33 1 31 1;
+#X connect 33 1 30 1;
+#X connect 34 0 29 0;
+#X coords 0 -1 1 1 194 120 2 285 152;
